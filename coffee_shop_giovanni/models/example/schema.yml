@@ -27,3 +27,9 @@ models:
         tests:
           - unique
           - not_null
+
+  - name: monthly_new_customers
+    description: 'Monthly Count of New Customers'
+    columns:
+      - name: signup_month
+      - name: new_customers
