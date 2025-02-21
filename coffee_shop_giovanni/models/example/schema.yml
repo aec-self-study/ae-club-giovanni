@@ -1,0 +1,35 @@
+
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: customers
+    description: 'cleaned up table of customers'
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: monthly_new_customers
+    description: 'Monthly Count of New Customers'
+    columns:
+      - name: signup_month
+      - name: new_customers
