@@ -15,9 +15,8 @@ group by 1
 select 
 
   date_trunc(sold_at, month) as date_month,  
-
   {% for product_category in category %}
-  sum(case when product_category = {{product_category}} then amount end) as {{product_category[i] | replace(" ", "_")}}_amount
+  sum(case when product_category = '{{product_category}}' then amount end) as {{ product_category | replace(" ", "_") }}_amount{% if not loop.last %}, {% endif %}
   {% endfor %}
   
 from {{ ref('item_sales') }}
