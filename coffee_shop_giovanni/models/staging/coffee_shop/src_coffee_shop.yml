@@ -11,21 +11,45 @@ sources:
       error_after: {count: 96, period: hour}
     tables:
       - name: customers
-        descritpion: Customer table.
         columns:
           - name: id
             tests:
               - unique
               - not_null
+          - name: email
+            tests:
+              - email_format          
 
       - name: orders
         columns:
           - name: id
-            descritpion: Orders table.
             tests:
               - unique
               - not_null
 
       - name: order_items
-      - name: product_prices
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
       - name: products
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
+      - name: product_prices
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
